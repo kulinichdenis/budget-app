@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { Modal } from 'react-bootstrap'
 import EditForm from './Form/EditForm'
 import NewForm from './Form/NewForm'
+import convert from '../helpers/convert'
 
 export default class Main extends Component {
 	constructor(props) {
@@ -34,7 +35,7 @@ export default class Main extends Component {
 		if(this.props.item.length > 0 && this.state.prev === '') {
 			this.setState({prev: this.props.item[0]})
 		}
-		this.setState({current:{name: e.name, cost: e.cost, percent: this.props.salary/100 * e.cost, group: e.group}})
+		this.setState({current:{name: e.name, cost: convert(e.cost), percent: this.props.salary/100 * convert(e.cost), group: e.group}})
 	}
 
 	closeModal() {

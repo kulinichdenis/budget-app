@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import Form from 'react-formal'
 import FormItem from './Form/FormItem'
 import modelInput from '../helpers/salary_validation'
-import salaryConvert from '../helpers/salaryConvert'
+import salaryConvert from '../helpers/convert'
 
 export default class SalaryItem extends Component {
 	render(){
