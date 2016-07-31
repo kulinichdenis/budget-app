@@ -1,0 +1,15 @@
+export const ADD_BUDGET_ITEM = 'ADD_BUDGET_ITEM'   
+export const EDIT_BUDGET_ITEM = 'EDIT_BUDGET_ITEM'   
+export const DELETE_BUDGET_ITEM = 'DELETE_BUDGET_ITEM'
+export const SET_EDIT_ITEM = 'SET_EDIT_ITEM'
+export const BACK_EDIT_ITEM = 'BACK_EDIT_ITEM'
+
+export const UPDATE_SALARY = 'UPDATE_SALARY'
+
+export const HIDE_MODAL = 'HIDE_MODAL'
+export const SHOW_MODAL = 'SHOW_MODAL'
+
+export const SORT_TABLE_ASC = 'SORT_TABLE_ASC'
+export const SORT_TABLE_DESC = 'SORT_TABLE_DESC'
+
+
