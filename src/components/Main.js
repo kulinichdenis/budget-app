@@ -19,14 +19,14 @@ export default class Main extends Component {
 
 	saveBudgetItem(e) {
 		this.props.actions.addBudgetItem({name: e.name,
-			cost: e.cost, group: e.group})
+			cost: e.cost, percent: e.percent, group: e.group})
 		this.setDefaultState()	
 		this.props.actions.closeModal()
 	}
 
 	editBudgetItem(e) {
 		this.props.actions.editBudgetItem({...this.props.item[0], name: e.name,
-			cost: e.cost, group: e.group})
+			cost: e.cost, percent: e.percent, group: e.group})
 		this.setDefaultState()
 		this.props.actions.closeModal()
 	}
@@ -35,7 +35,7 @@ export default class Main extends Component {
 		if(this.props.item.length > 0 && this.state.prev === '') {
 			this.setState({prev: this.props.item[0]})
 		}
-		this.setState({current:{name: e.name, cost: convert(e.cost), percent: this.props.salary/100 * convert(e.cost), group: e.group}})
+		this.setState({current:{name: e.name, cost: convert(e.cost), percent: 100 * convert(e.cost)/this.props.salary, group: e.group}})
 	}
 
 	closeModal() {

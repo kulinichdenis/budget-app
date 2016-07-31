@@ -6,7 +6,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_BUDGET_ITEM':
-      return {...state, budgetList: [...state.budgetList, {...action.item, percent: state.salary/100 * action.item.cost}]}
+      return {...state, budgetList: [...state.budgetList, {...action.item}]}
       
     case 'DELETE_BUDGET_ITEM':
 			return  {...state, budgetList: state.budgetList.filter((item) => item.id != action.id)}    
@@ -14,7 +14,7 @@ export default (state = initialState, action) => {
     case 'EDIT_BUDGET_ITEM':
       return {...state, budgetList: state.budgetList.map((item) => {
         if(item.id === action.item.id) {
-          return {...action.item, percent: state.salary * action.item.cost/100, edit: false }
+          return {...action.item, edit: false }
         } 
           return item
         })
@@ -39,7 +39,7 @@ export default (state = initialState, action) => {
       }
 
     case 'UPDATE_SALARY':
-      return { budgetList: state.budgetList.map((item) => { return {...item, percent: action.salary/100 * item.cost} }), salary: action.salary }  
+      return { budgetList: state.budgetList.map((item) => { return {...item, percent: 100 * item.cost/action.salary} }), salary: action.salary }  
     
     case 'SORT_TABLE_ASC':
       return {...state, budgetList: [...state.budgetList.sort((a,b) => {
