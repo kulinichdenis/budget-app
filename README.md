@@ -1,4 +1,4 @@
-# luxoft
+# Budget
 1. git clone
 2. cd luxoft-test-app
 3. npm install
